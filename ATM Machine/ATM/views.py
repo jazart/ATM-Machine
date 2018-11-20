@@ -2,6 +2,13 @@
 
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from datetime import datetime
 def index(request):
-    return HttpResponse("Hello ATM!")
+    return render(request,
+        "ATM/index.html",
+        {
+            'title': "Hello ATM!",
+            'message': 'Hey ATM Machine!',
+            'content': " on " + datetime.now().strftime("%A, %d, %b, %Y at %X")
+        }
+    )
