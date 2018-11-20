@@ -17,4 +17,5 @@ urlpatterns = [
     # Examples:
     url(r'^$', ATM.views.index, name='index'),
     url(r'^home$', ATM.views.index, name='home'),
+    url(r'^about$', ATM.views.about, name='about')
 ]

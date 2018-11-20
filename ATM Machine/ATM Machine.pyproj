@@ -62,12 +62,16 @@
     <Folder Include="app\templates\app\" />
     <Folder Include="ATM\" />
     <Folder Include="ATM\migrations\" />
+    <Folder Include="ATM\static\" />
     <Folder Include="ATM\templates\" />
     <Folder Include="ATM\templates\ATM\" />
     <Folder Include="ATM_Machine\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ATM\static\site.css" />
+    <Content Include="ATM\templates\ATM\about.html" />
     <Content Include="ATM\templates\ATM\index.html" />
+    <Content Include="ATM\templates\ATM\layout.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
