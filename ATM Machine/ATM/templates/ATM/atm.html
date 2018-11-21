@@ -1,0 +1,11 @@
+﻿{% extends "ATM/layout.html" %}
+
+<strong>List of ATMs available: </strong>
+<ul>
+    {% block content %}
+    {% for item in all_atms %}
+    <li><b>{{ item.num }}</b></li>
+    {% endfor %}
+    {% endblock %}
+
+</ul>

@@ -3,15 +3,12 @@ from django.core.validators import RegexValidator
 import random
 import datetime
 # Create your models here.
+
 class ATM(models.Model):
     """Class that interacts with db to view and update a customer's balance"""
-    def __init__(self, num):
-        self.num = num
-
+    num = models.IntegerField(default=0000)
     def __unicode__(self):
         return self.num
-
-
 
 class Account(models.Model):
     num = models.CharField(max_length=10,

@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="ATM\static\site.css" />
     <Content Include="ATM\templates\ATM\about.html" />
+    <Content Include="ATM\templates\ATM\atm.html" />
     <Content Include="ATM\templates\ATM\index.html" />
     <Content Include="ATM\templates\ATM\layout.html" />
     <Content Include="requirements.txt" />

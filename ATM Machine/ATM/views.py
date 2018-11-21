@@ -3,6 +3,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
+from .models import ATM
+
 def index(request):
     return render(request,
         "ATM/index.html",
@@ -22,3 +24,7 @@ def about(request):
             'content': "Exmample page for Django"
         }
      )
+
+def atm(request):
+    all_atms = ATM.objects.all()
+    return render(request, "ATM/atm.html", {'all_atms': all_atms})
