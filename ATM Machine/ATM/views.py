@@ -36,3 +36,6 @@ def request_page(request):
         new_atm = ATM(num=(int(request.POST.get('content'))))
         new_atm.save()
     return HttpResponseRedirect('/home/')
+
+def portal(request):
+    return render(request, "ATM/portal.html", {'user': "User Mode", 'admin' : "Admin Mode"})

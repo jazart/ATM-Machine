@@ -16,6 +16,7 @@ import ATM.views
 
 urlpatterns = [
     path('', ATM.views.index, name='index'),
+    path('portal/', ATM.views.portal),
     path('home/', ATM.views.index, name='home'),
     path('about/', ATM.views.about, name='about'),
     path('atm/', ATM.views.atm, name='ATMs'),
