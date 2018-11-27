@@ -4,6 +4,7 @@ Definition of urls for ATM_Machine.
 
 from datetime import datetime
 from django.conf.urls import url
+from django.urls import path
 import django.contrib.auth.views
 
 import ATM.views
@@ -14,9 +15,9 @@ import ATM.views
 # admin.autodiscover()
 
 urlpatterns = [
-    # Examples:
-    url(r'^$', ATM.views.index, name='index'),
-    url(r'^home$', ATM.views.index, name='home'),
-    url(r'^about$', ATM.views.about, name='about'),
-    url(r'^atm$', ATM.views.atm, name='ATMs')
+    path('', ATM.views.index, name='index'),
+    path('home/', ATM.views.index, name='home'),
+    path('about/', ATM.views.about, name='about'),
+    path('atm/', ATM.views.atm, name='ATMs'),
+    path('request_page/', ATM.views.request_page)
 ]

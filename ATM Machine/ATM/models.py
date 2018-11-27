@@ -6,7 +6,7 @@ import datetime
 
 class ATM(models.Model):
     """Class that interacts with db to view and update a customer's balance"""
-    num = models.IntegerField(default=0000)
+    num = models.IntegerField(default=1)
     def __unicode__(self):
         return self.num
 
@@ -21,7 +21,7 @@ class Account(models.Model):
                                 )
     name = models.TextField()
     balance = models.DecimalField(decimal_places=2, max_digits=10)
-    owner = models.OneToOneField("User")
+    owner = models.OneToOneField("User", on_delete=models.CASCADE)
     ACCOUNT_TYPE = (
         ('SAVINGS', 'Savings'),
         ('CHECKING', 'Checking'),
@@ -39,7 +39,7 @@ class Account(models.Model):
 
 class ATMCard():
     name = models.CharField(max_length=50)
-    account = models.ForeignKey(Account)
+    account = models.ForeignKey(Account, on_delete=models.CASCADE)
     dateofissue = models.DateField()
     expiration = models.DateField()
     num = models.IntegerField()

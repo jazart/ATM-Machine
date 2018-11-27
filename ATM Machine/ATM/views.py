@@ -1,7 +1,7 @@
 
-
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from datetime import datetime
 from .models import ATM
 
@@ -28,3 +28,11 @@ def about(request):
 def atm(request):
     all_atms = ATM.objects.all()
     return render(request, "ATM/atm.html", {'all_atms': all_atms})
+
+
+def request_page(request):
+    if(request.POST.get('content')):
+        print("Saving Atm")
+        new_atm = ATM(num=(int(request.POST.get('content'))))
+        new_atm.save()
+    return HttpResponseRedirect('/home/')
