@@ -44,3 +44,13 @@ def about(request):
             'year':datetime.now().year,
         }
     )
+
+def status(request):
+    return render(
+        request,
+        "ATM/status.html",
+        {
+            'title': "ATM Status",
+            'content': "This page will display the status of the ATM"
+            }
+        )

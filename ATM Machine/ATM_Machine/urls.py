@@ -20,5 +20,6 @@ urlpatterns = [
     path('home/', ATM.views.index, name='home'),
     path('about/', ATM.views.about, name='about'),
     path('atm/', ATM.views.atm, name='ATMs'),
+    path('status/', ATM.views.status, name='status'),
     path('request_page/', ATM.views.request_page)
 ]

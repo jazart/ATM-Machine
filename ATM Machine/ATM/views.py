@@ -30,6 +30,7 @@ def atm(request):
     return render(request, "ATM/atm.html", {'all_atms': all_atms})
 
 
+
 def request_page(request):
     if(request.POST.get('content')):
         print("Saving Atm")
@@ -39,3 +40,6 @@ def request_page(request):
 
 def portal(request):
     return render(request, "ATM/portal.html", {'user': "User Mode", 'admin' : "Admin Mode"})
+
+def status(request):
+    return render(request, "ATM/status.html", {'title': "ATM Status", 'content' : "This page will display the status of the ATM"})

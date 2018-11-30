@@ -76,6 +76,7 @@
     <Content Include="ATM\templates\ATM\index.html" />
     <Content Include="ATM\templates\ATM\layout.html" />
     <Content Include="ATM\templates\ATM\portal.html" />
+    <Content Include="ATM\templates\ATM\status.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
