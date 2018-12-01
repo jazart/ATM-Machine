@@ -21,5 +21,6 @@ urlpatterns = [
     path('about/', ATM.views.about, name='about'),
     path('atm/', ATM.views.atm, name='ATMs'),
     path('status/', ATM.views.status, name='status'),
-    path('request_page/', ATM.views.request_page)
+    path('request_page/', ATM.views.request_page),
+    path('admin/', ATM.views.admin, name = "admin")
 ]
