@@ -7,12 +7,16 @@ from .models import ATM
 from .models import ATMCard
 
 def index(request):
+    if request.POST.get('user'):
+        mode = "User"
+    else: 
+        mode = "Admin"
     return render(request,
         "ATM/index.html",
         {
-            'title': "Hello ATM!",
-            'message': 'Hey ATM Machine!',
-            'content': " on " + datetime.now().strftime("%A, %d, %b, %Y at %X")
+            'title': mode,
+            'message': 'Hey ' + mode,
+            'content': " today is " + datetime.now().strftime("%A, %d, %b, %Y at %X")
         }
     )
 

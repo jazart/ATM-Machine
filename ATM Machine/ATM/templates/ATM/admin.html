@@ -1,43 +1,18 @@
-﻿<!DOCTYPE html>
+﻿{% extends "ATM/layout.html" %}
+{% block content %}
+    <form>
+        <fieldset>
+            <legend>New ATM Card Info</legend>
+            Name: <input type = "text"><br>
+            Account Number: <input type = "text"><br>
+            <input type="date" class="form-control" 
+                    id="date" value="Date of Issue">
+            <input type="date" class="form-control" 
+                    name="date" value="Expiration Date">
+            Card Number: <input type = "text"><br>
+            PIN Number: <input type = "text">
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title>{{ title }} </title>
-        {% load staticfiles %}
-    <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}"/>
-    </head>
-    <body>
-        <div class="navbar">
-            <a href="/" class="-brant">ATM Admin</a>
-            <a href="{% url 'home' %}" class="navbar-item">Home</a>
-            <a href="{% url 'about' %}" class="navbar-item">About</a>
-            <a href="{% url 'ATMs' %}" class="navbar-item">ATMs</a>
-            a href="{% url 'admin' %}" class="navbar-item">Admin</a>
-        </div>
-
-        <div class="body-content">
-            <form>
-                <fieldset>
-                    <legend>New ATM Card Info</legend>
-                    Name: <input type = "text"><br>
-                    Account Number: <input type = "text"><br>
-                    Date of Issue: <input type = "text"><br>
-                    Expiration Date: <input type = "text"><br>
-                    Card Number: <input type = "text"><br>
-                    PIN Number: <input type = "text">
-
-                </fieldset>
-                <input type="submit" class="btn" value="Add">
-                </form>
-        </div>
-        
-        <div class="body-content">
-            {% block content %}{% endblock %}
-            <hr/>
-            <footer>
-                <p>&copy; 2018</p>
-            </footer>
-        </div>
-</body>
-</html>
+        </fieldset>
+        <input type="submit" class="btn" value="Add">
+        </form>
+{% endblock %}

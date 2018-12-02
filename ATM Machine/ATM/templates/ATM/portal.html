@@ -1,7 +1,7 @@
 ﻿{% extends "ATM/layout.html" %}
 {% block content %}
 <form action='home/' method="post">{% csrf_token %}
- <input type="submit" value={{ admin }}>
- <input type="submit" value={{ user }}>
+ <input type="submit" value={{ admin }} name="admin">
+ <input type="submit" value={{ user }} name="user">
 </form>
 {% endblock %}

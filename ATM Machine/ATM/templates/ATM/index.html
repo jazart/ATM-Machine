@@ -1,8 +1,8 @@
 {% extends "ATM/layout.html" %}
 {% block content %}
 <span class="message">{{ message }}</span>{{ content }}
-<form action="/request_page/" method="post">{% csrf_token %}
- <input type="text" name="content">
- <input type="submit" class="btn" value="Add">
-</form>
+    <form action="/request_page/" method="post">{% csrf_token %}
+     <input type="text" name="content">
+     <input type="submit" class="btn" value="Add">
+    </form>
 {% endblock %}
