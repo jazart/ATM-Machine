@@ -37,6 +37,7 @@ def atm(request):
 
 def admin(request):
     ###all_atmcards = ATMCard.objects.all()
+    print(request.POST.get('card'))
     return render(request, "ATM/admin.html", {'title': "ATM Status", 'content' : "This page will display the status of the ATM"})
 
 def request_page(request):
