@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from datetime import datetime
 from .models import ATM
+from .models import ATMCard
 
 def index(request):
     return render(request,
@@ -30,6 +31,10 @@ def atm(request):
     return render(request, "ATM/atm.html", {'all_atms': all_atms})
 
 
+def admin(request):
+    ###all_atmcards = ATMCard.objects.all()
+    return render(request, "ATM/admin.html", {'title': "ATM Status", 'content' : "This page will display the status of the ATM"})
+
 def request_page(request):
     if(request.POST.get('content')):
         print("Saving Atm")
@@ -39,3 +44,6 @@ def request_page(request):
 
 def portal(request):
     return render(request, "ATM/portal.html", {'user': "User Mode", 'admin' : "Admin Mode"})
+
+def status(request):
+    return render(request, "ATM/status.html", {'title': "ATM Status", 'content' : "This page will display the status of the ATM"})
