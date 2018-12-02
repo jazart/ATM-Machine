@@ -1,4 +1,0 @@
-
-"""
-Package for the application.
-"""
