@@ -57,10 +57,16 @@
     <Content Include="ATM\static\site.css" />
     <Content Include="ATM\templates\ATM\about.html" />
     <Content Include="ATM\templates\ATM\admin.html" />
+    <Content Include="ATM\templates\ATM\adminmenu.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="ATM\templates\ATM\atm.html" />
     <Content Include="ATM\templates\ATM\btnform.html" />
     <Content Include="ATM\templates\ATM\index.html" />
     <Content Include="ATM\templates\ATM\layout.html" />
+    <Content Include="ATM\templates\ATM\navbar.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="ATM\templates\ATM\portal.html" />
     <Content Include="ATM\templates\ATM\status.html" />
     <Content Include="requirements.txt" />

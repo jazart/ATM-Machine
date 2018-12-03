@@ -14,7 +14,7 @@ def index(request):
     return render(request,
         "ATM/index.html",
         {
-            'title': mode,
+            'mode': mode,
             'message': 'Hey ' + mode,
             'content': " today is " + datetime.now().strftime("%A, %d, %b, %Y at %X")
         }

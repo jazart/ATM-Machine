@@ -1,0 +1,10 @@
+{% block content %}
+<div class="navbar">
+    <a href="/" class="-brant">ATM Admin</a>
+    <a href="{% url 'status' %}" class="navbar-item">Status</a>
+    <a href="{% url 'admin' %}" class="navbar-item">Admin</a>
+    {% if mode == "Admin" %}
+        {% include "ATM/adminmenu.html" %}
+    {% endif %}
+</div>    
+{% endblock %}      

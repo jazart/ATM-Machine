@@ -8,14 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}"/>
     </head>
     <body>
-        <div class="navbar">
-            <a href="/" class="-brant">ATM Admin</a>
-            <a href="{% url 'home' %}" class="navbar-item">Home</a>
-            <a href="{% url 'about' %}" class="navbar-item">About</a>
-            <a href="{% url 'status' %}" class="navbar-item">Status</a>
-            <a href="{% url 'admin' %}" class="navbar-item">Admin</a>
-        </div>
-
+        {% include "ATM/navbar.html" %}
         <div class="body-content">
             {% block content %}{% endblock %}
             <hr/>
