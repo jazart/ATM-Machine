@@ -7,6 +7,9 @@ import datetime
 class ATM(models.Model):
     """Class that interacts with db to view and update a customer's balance"""
     num = models.IntegerField(default=1)
+    address = models.CharField(max_length=50)
+    balance = models.DecimalField(decimal_places=2, max_digits=10)
+    refillDate = models.DateField()
     def __unicode__(self):
         return self.num
 

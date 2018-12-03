@@ -2,16 +2,16 @@
 {% block content %}
 <span class="message">{{ message }}</span>{{ content }}
     <form action="/admin/" method="post">
-        <fieldset name=" card">
+        <fieldset >
             <legend>New ATM Card Info</legend>
-            Name: <input type = "text"><br>
-            Account Number: <input type = "text"><br>
-            <input type="date" class="form-control"  
+            Name: <input type = "text" name=" name"><br>
+            Account Number: <input type = "text" name="accnum"><br>
+            <input type="date"  name="dateissue" class="form-control"  
                     id="date" value="Date of Issue">
-            <input type="date" class="form-control" 
+            <input type="date" name ="expdate"class="form-control" 
                     name="date" value="Expiration Date">
-            Card Number: <input type = "text"><br>
-            PIN Number: <input type = "text">
+            Card Number: <input type = "text"  name="cardnum"><br>
+            PIN Number: <input type = "text"  name="pinnum">
 
         </fieldset>
         <input type="submit" class="btn" value="Add">
