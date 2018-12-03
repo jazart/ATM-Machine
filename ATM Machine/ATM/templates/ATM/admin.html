@@ -1,7 +1,7 @@
 ﻿{% extends "ATM/layout.html" %}
 {% block content %}
 <span class="message">{{ message }}</span>{{ content }}
-    <form action="/admin/" method="post">
+    <form action="/admin/" method="post">{% csrf_token %}
         <fieldset >
             <legend>New ATM Card Info</legend>
             Name: <input type = "text" name="name"><br>

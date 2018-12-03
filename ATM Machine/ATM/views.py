@@ -9,11 +9,14 @@ from .models import ATMCard
 def index(request):
     if request.POST.get('user'):
         mode = "User"
-    else: 
+    elif request.POST.get('admin'): 
         mode = "Admin"
+    else:
+        mode = ""
     return render(request,
         "ATM/index.html",
         {
+            'Title': "ATM Account Manager",
             'mode': mode,
             'message': 'Hey ' + mode,
             'content': " today is " + datetime.now().strftime("%A, %d, %b, %Y at %X")
