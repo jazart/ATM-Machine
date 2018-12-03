@@ -58,7 +58,14 @@ def request_page(request):
 def portal(request):
     return render(request, "ATM/portal.html", {'user': "User Mode", 'admin' : "Admin Mode"})
 
+
 def status(request):
-    atmStat = ATM.objects.values()
+    ##ATM.objects.all().delete()
+    ##dummy()
+
+    atmStat = ATM.objects.all()
     return render(request, "ATM/status.html", {'atms' : atmStat})
 
+def dummy():
+    atm = ATM(address = "4395 university ave", Lrefill = datetime.now(), Minbalance = 324342.66, NrefillDate = datetime.now(), balance = 2423423.66)
+    atm.save()

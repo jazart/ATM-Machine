@@ -1,9 +1,17 @@
 ﻿{% extends "ATM/layout.html" %}
 {% block content %}
-    <p>ATM address:</p>
-    <p>ATM Machine status:</p>
-    <p>Last refill date:</p>
-    <p>Next refill date:</p>
-    <p>Min balance enquiry:</p>
-    <p>Current balance:</p>
+<h1>ATM Status</h1>
+   
+    {% for atm in atms %}
+    
+          <h4>ATM Address: {{ atm.address }} </h4>
+         <h4>Last Refill Date: {{ atm.Lrefill }}</h4>
+          <h4>Minimum Balance enquiry: {{ atm.Minbalance }}</h4> 
+          <h4>Next Refill Date: {{ atm.NrefillDate }}</h4>
+          <h4>Current Balance:{{ atm.balance }}</h4>
+          
+      
+    {% endfor %}
+
+    
 {% endblock %}
