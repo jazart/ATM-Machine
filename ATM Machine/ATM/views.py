@@ -37,7 +37,7 @@ def atm(request):
 
 def admin(request):
     ###all_atmcards = ATMCard.objects.all()
-    print(request.POST.get('card'))
+    print(request.POST.get('name'))
     return render(request, "ATM/admin.html", {'title': "ATM Status", 'content' : "This page will display the status of the ATM"})
 
 def request_page(request):
@@ -51,4 +51,6 @@ def portal(request):
     return render(request, "ATM/portal.html", {'user': "User Mode", 'admin' : "Admin Mode"})
 
 def status(request):
-    return render(request, "ATM/status.html", {'title': "ATM Status", 'content' : "This page will display the status of the ATM"})
+    atmStat = ATM.objects.all()
+    return render(request, "ATM/status.html", atmStat)
+
