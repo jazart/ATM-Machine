@@ -31,8 +31,7 @@ def about(request):
      )
 
 def atm(request):
-    all_atms = ATM.objects.all()
-    return render(request, "ATM/atm.html", {'all_atms': all_atms})
+    return render(request, "ATM/atm.html", {'all_atms': "kk"})
 
 
 def admin(request):
@@ -51,6 +50,6 @@ def portal(request):
     return render(request, "ATM/portal.html", {'user': "User Mode", 'admin' : "Admin Mode"})
 
 def status(request):
-    atmStat = ATM.objects.all()
-    return render(request, "ATM/status.html", atmStat)
+    atmStat = ATM.objects.values()
+    return render(request, "ATM/status.html", {'atms' : atmStat})
 
