@@ -25,7 +25,7 @@ class Account(models.Model):
                                 )
     name = models.TextField()
     balance = models.DecimalField(decimal_places=2, max_digits=10)
-    owner = models.OneToOneField("User", on_delete=models.CASCADE)
+    owner = models.OneToOneField("User", on_delete=models.CASCADE, primary_key = True)
     ACCOUNT_TYPE = (
         ('SAVINGS', 'Savings'),
         ('CHECKING', 'Checking'),
@@ -41,7 +41,7 @@ class Account(models.Model):
         return ""
 
 
-class ATMCard():
+class ATMCard(models.Model):
     name = models.CharField(max_length=50)
     account = models.ForeignKey(Account, on_delete=models.CASCADE)
     dateofissue = models.DateField()
