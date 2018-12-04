@@ -43,7 +43,7 @@ def admin(request):
     #User.objects.create(name="Kendrick")
     #user = User.objects.all()[0]
     #dummy()
-    test()
+    #test()
     if request.method == 'POST':
 
         if(Account.objects.filter(num = request.POST.get('accnum')).count() == 0):
@@ -68,8 +68,8 @@ def admin(request):
 
     return render(request, "ATM/admin.html", {'title': "ATM Status", 'content' : "This page will display the status of the ATM"})
 
-def test():
-    print(Account.objects.all()[1].name)
+#def test():
+#    print(Account.objects.all()[0].name)
 def dummy():
     ##User.objects.create(name="Kendrick")
     user = User.objects.all()[0]
