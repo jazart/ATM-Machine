@@ -28,7 +28,7 @@ def about(request):
         "ATM/about.html",
         {
             'title': "About the ATM",
-            'content': "Exmample page for Django"
+           
         }
      )
 
@@ -90,10 +90,12 @@ def portal(request):
 
 
 def status(request):
-    ##ATM.objects.all().delete()
-    ##dummy()
+    ATM.objects.all().delete()
+    dummy()
 
     atmStat = ATM.objects.all()
     return render(request, "ATM/status.html", {'atms' : atmStat})
 
-
+def dummy():
+    atm = ATM(address = "4395 university ave", Lrefill = datetime.now(), Minbalance = 324342.66, NrefillDate = datetime.now(), balance = 2423423.66)
+    atm.save()
