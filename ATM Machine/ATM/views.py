@@ -29,7 +29,7 @@ def about(request):
         "ATM/about.html",
         {
             'title': "About the ATM",
-            'content': "Exmample page for Django"
+           
         }
      )
 
