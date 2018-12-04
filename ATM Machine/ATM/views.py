@@ -42,7 +42,18 @@ def admin(request):
     #if reques.POST:
     #User.objects.create(name="Kendrick")
     #user = User.objects.all()[0]
+    #dummy()
+    test()
     if request.method == 'POST':
+
+        if(Account.objects.filter(num = request.POST.get('accnum')).count() == 0):
+            print("test")
+            user = User(name = request.POST.get('name'))
+            account = Account(num =  request.POST.get('accnum'), phonenum = "7069574826", name = request.POST.get('name'), 
+                              balance = 0.00, owner = user, account_type = "Savings")
+            user.save()
+            account.save()
+        
         ATMCard.objects.create(
             name = request.POST.get('name'),
             account = Account.objects.all()[0],
@@ -57,9 +68,15 @@ def admin(request):
 
     return render(request, "ATM/admin.html", {'title': "ATM Status", 'content' : "This page will display the status of the ATM"})
 
+def test():
+    print(Account.objects.all()[1].name)
 def dummy():
-    account = Account(num = "6784567898", phonenum = "7069574826", name = "Kendrick Gholston", balance = 5000.78)
-    account.save()
+    ##User.objects.create(name="Kendrick")
+    user = User.objects.all()[0]
+    user.name  = "Kendrick Gholston"
+    user.save()
+    ##account = Account(num = "6784567898", phonenum = "7069574826", name = "Kendrick Gholston", balance = 5000.78, owner = user, account_type = "Savings")
+    ##account.save()
 
 def request_page(request):
     if(request.POST.get('content')):
