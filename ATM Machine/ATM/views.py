@@ -2,7 +2,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from datetime import datetime
+import datetime
 from .models import ATM, ATMCard, Account, User
 
 def index(request):
@@ -18,7 +18,7 @@ def index(request):
             'Title': "ATM Account Manager",
             'mode': mode,
             'message': 'Hey ' + mode,
-            'content': " today is " + datetime.now().strftime("%A, %d, %b, %Y at %X")
+            'content': " today is " + datetime.datetime.now().strftime("%A, %d, %b, %Y at %X")
         }
     )
 
@@ -56,7 +56,7 @@ def admin(request):
         
         ATMCard.objects.create(
             name = request.POST.get('name'),
-            account = Account.objects.all()[0],
+            account = Account.objects.filter(name = request.POST.get('name')).first(),
             dateofissue = request.POST.get('dateissue'),
             expiration = request.POST.get('expdate'),
             num = request.POST.get('cardnum'),
@@ -66,7 +66,7 @@ def admin(request):
     #    print("Info: {num}, {name}, {pin}".format(num = card.num, name = card.name, pin = card.pin))
 
 
-    return render(request, "ATM/admin.html", {'title': "ATM Status", 'content' : "This page will display the status of the ATM"})
+    return render(request, "ATM/admin.html", {'title': "ATM Card", 'content' : "This page will display the status of the ATM"})
 
 #def test():
 #    print(Account.objects.all()[0].name)
@@ -91,11 +91,13 @@ def portal(request):
 
 def status(request):
     ATM.objects.all().delete()
-    dummy()
-
+    dummyA()
     atmStat = ATM.objects.all()
+
     return render(request, "ATM/status.html", {'atms' : atmStat})
 
-def dummy():
-    atm = ATM(address = "4395 university ave", Lrefill = datetime.now(), Minbalance = 324342.66, NrefillDate = datetime.now(), balance = 2423423.66)
+def dummyA():
+    atm = ATM(address = "4395 university ave", Lrefill = datetime.datetime.now(), Minbalance = 324342.66, NrefillDate = datetime.date(2019,1,18), balance = 2423423.66)
     atm.save()
+    atm2 = ATM(address = "7800 schomburg rd", Lrefill = datetime.datetime.now(), Minbalance = 324342.66, NrefillDate = datetime.date(2019,1,18), balance = 1003423.70)
+    atm2.save()
